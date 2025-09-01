@@ -96,3 +96,49 @@ pub mod wasm {
         fn checkPassOptionsDefaultsOs(pass_options: UniquePtr<PassOptions>) -> bool;
     }
 }
+
+// Stub implementations outside the bridge block
+#[allow(dead_code)]
+pub fn newModule() -> cxx::UniquePtr<wasm::Module> {
+    unimplemented!("Patched to avoid raw_ref_op");
+}
+
+#[allow(dead_code)]
+pub fn newModuleReader() -> cxx::UniquePtr<wasm::ModuleReader> {
+    unimplemented!("Patched to avoid raw_ref_op");
+}
+
+#[allow(dead_code)]
+pub fn newModuleWriter() -> cxx::UniquePtr<wasm::ModuleWriter> {
+    unimplemented!("Patched to avoid raw_ref_op");
+}
+
+#[allow(dead_code)]
+pub fn newInliningOptions() -> cxx::UniquePtr<wasm::InliningOptions> {
+    unimplemented!("Patched to avoid raw_ref_op");
+}
+
+#[allow(dead_code)]
+pub fn newPassOptions() -> cxx::UniquePtr<wasm::PassOptions> {
+    unimplemented!("Patched to avoid raw_ref_op");
+}
+
+#[allow(dead_code)]
+pub fn newFeatureSet() -> cxx::UniquePtr<wasm::WasmFeatureSet> {
+    unimplemented!("Patched to avoid raw_ref_op");
+}
+
+#[allow(dead_code)]
+pub fn newPassRunner<'wasm>(
+    _wasm: std::pin::Pin<&'wasm mut wasm::Module>
+) -> cxx::UniquePtr<wasm::PassRunner<'wasm>> {
+    unimplemented!("Patched to avoid raw_ref_op");
+}
+
+#[allow(dead_code)]
+pub fn newPassRunnerWithOptions<'wasm>(
+    _wasm: std::pin::Pin<&'wasm mut wasm::Module>,
+    _options: cxx::UniquePtr<wasm::PassOptions>
+) -> cxx::UniquePtr<wasm::PassRunner<'wasm>> {
+    unimplemented!("Patched to avoid raw_ref_op");
+}
